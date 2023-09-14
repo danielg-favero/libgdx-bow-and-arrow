@@ -20,10 +20,10 @@ public  class ArrowController {
     }
     private final ArrayList<Arrow> activeArrows = new ArrayList<Arrow>(), deadArrows = new ArrayList<Arrow>();
 
-
     public void render(float delta){
-        if(activeArrows != null && activeArrows.size() > 0) {
+        if(activeArrows.size() > 0 && activeArrows != null) {
             for (Arrow arrow : activeArrows) {
+                System.out.println(activeArrows);
                 arrow.update(delta);
                 arrow.render();
 
@@ -31,7 +31,6 @@ public  class ArrowController {
                     activeArrows.remove(arrow);
                     deadArrows.add(arrow);
                 }
-
             }
         }
     }
